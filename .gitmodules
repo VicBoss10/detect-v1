@@ -1,0 +1,6 @@
+[submodule "backend"]
+	path = backend
+	url = https://github.com/VicBoss10/detect.git
+[submodule "frontend"]
+	path = frontend
+	url = https://github.com/Danieltwelve/FrontedModelos.git
