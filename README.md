@@ -49,6 +49,12 @@ docker compose up --build
 
 Esto levantará todos los servicios: backend, frontend, Keycloak y las bases de datos.
 
+> Nota: En algunas ocasiones la imagen de java_app no se inicia porque depende de java_db (Aunque esta definido en el docker-compose.yaml).
+ Si pasa esto iniciar la imagen manualmente.
+
+```sh
+docker compose start java_app
+```
 ---
 
 ## Acceso a la Aplicación
