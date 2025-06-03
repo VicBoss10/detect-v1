@@ -75,4 +75,35 @@ Esto levantará todos los servicios: backend, frontend, Keycloak y las bases de 
 
 > Nota: Estas credenciales son solo para fines educativos y de demostración.
 
+---
+
+## Inserción de Datos de Ejemplo
+
+Después de levantar los servicios con Docker Compose, puedes cargar datos de ejemplo en la base de datos de la aplicación usando el archivo `ejemplos.sql`.  
+Esto es útil si las tablas ya fueron creadas por JPA/Hibernate y solo necesitas poblarlas con datos de prueba.
+
+### Pasos para insertar los datos de ejemplo
+
+1. **Copia el archivo `ejemplos.sql` al contenedor de la base de datos:**
+
+   ```sh
+   docker cp ./ejemplos.sql java_db:/ejemplos.sql
+   ```
+
+2. **Ejecuta el script dentro del contenedor:**
+
+   ```sh
+   docker compose exec java_db psql -U postgres -d postgres -f /ejemplos.sql
+   ```
+
+   Si el comando anterior falla (por ejemplo, en Windows), puedes usar esta alternativa:
+
+   ```sh
+   docker compose exec -T java_db psql -U postgres -d postgres < ejemplos.sql
+   ```
+
+> **Nota:** Realiza estos pasos solo después de que los servicios estén arriba y las tablas hayan sido creadas por la aplicación.
+
+---
+
 
