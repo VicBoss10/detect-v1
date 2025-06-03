@@ -15,11 +15,11 @@
 
 INSERT INTO devices (name, type, location, status) VALUES
 -- Cámaras de seguridad
-('CAM-ENTRADA-01', 'CAMERA', 'Entrada Principal - Planta Baja', 'ACTIVE'),
-('CAM-PARKING-02', 'CAMERA', 'Estacionamiento - Zona A', 'ACTIVE'),
+('CAM-ENTRADA-01', 'CAMERA', 'Entrada Principal - Planta Baja', 'INACTIVE'),
+('CAM-PARKING-02', 'CAMERA', 'Estacionamiento - Zona A', 'INACTIVE'),
 ('CAM-OFICINA-03', 'CAMERA', 'Oficinas - Segundo Piso', 'INACTIVE'),
-('CAM-ALMACEN-04', 'CAMERA', 'Almacén - Zona de Carga', 'ACTIVE'),
-('CAM-PERIMETRO-05', 'CAMERA', 'Perímetro Norte', 'ACTIVE'),
+('CAM-ALMACEN-04', 'CAMERA', 'Almacén - Zona de Carga', 'INACTIVE'),
+('CAM-PERIMETRO-05', 'CAMERA', 'Perímetro Norte', 'INACTIVE'),
 
 -- Sensores IoT
 ('SENSOR-TEMP-01', 'SENSOR', 'Sala de Servidores', 'ACTIVE'),
@@ -153,6 +153,14 @@ INSERT INTO detected_objects (detection_id, label, confidence, x1, y1, x2, y2) V
 (15, 'toolbox', 0.83, 180, 380, 240, 420),
 (15, 'ladder', 0.77, 300, 200, 340, 400);
 
+-- ============================================
+-- 5. INSERCIÓN DE USUARIOS
+-- ============================================
+
+INSERT INTO users (id, username, email, role) VALUES
+('1ba68c71-10dd-455e-88fb-143f888ed0a1', 'daniel.nieto', 'danielnieto20@gmail.com', 'USER'),
+('09d99899-7b3d-4cf0-b2d5-9bc5b6da1708', 'dylan.cadena', 'dilinpinguin@mail.com', 'USER'),
+('7fa314ea-66c9-4523-949c-23be681136f3', 'victor.manuel', 'vicboss2002@gmail.com', 'ADMIN');
 -- ============================================
 -- CONSULTAS DE VERIFICACIÓN
 -- ============================================
